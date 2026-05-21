@@ -7,14 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --black: #000000;      /* Pure Black */
-      --dark: #0a0a0a;       /* Rich Deep Charcoal for contrast */
-      --card: #111111;       /* Dark grey for cards */
-      --accent: #ff0000;     /* Pure Red */
-      --accent2: #cc0000;    /* Darker Red for gradients/hover */
+      --black: #05070a;      /* Deep Midnight Black */
+      --dark: #0c1017;       /* Dark Charcoal Slate */
+      --card: #131924;       /* Slate Grey Blue for cards */
+      --accent: #ff6600;     /* Electric Orange */
+      --accent2: #e04b00;    /* Darker Orange for gradients/hover */
+      --secondary: #00d2ff;  /* Neon Cyan Blue for subtle links/highlights */
       --text: #ffffff;       /* Pure White */
-      --muted: #aaaaaa;      /* Medium Light Grey for secondary text */
-      --border: #222222;     /* Neutral dark border */
+      --muted: #8fa0b5;      /* Cool Steel Grey for secondary text */
+      --border: #1e2633;     /* Subtle Blue-Grey dark border */
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,7 +38,7 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 9999;
-      opacity: 0.25;
+      opacity: 0.2;
     }
 
     /* ─── NAV ─── */
@@ -49,7 +50,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.2rem 4rem;
-      background: rgba(0,0,0,0.9);
+      background: rgba(5, 7, 10, 0.9);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -77,7 +78,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover { color: var(--secondary); }
 
     /* ─── HERO ─── */
     #hero {
@@ -94,8 +95,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,0,0,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(255,0,0,0.05) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255, 102, 0, 0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0, 210, 255, 0.08) 0%, transparent 60%);
     }
 
     .hero-lines {
@@ -106,8 +107,8 @@
         90deg,
         transparent,
         transparent 60px,
-        rgba(255,0,0,0.03) 60px,
-        rgba(255,0,0,0.03) 61px
+        rgba(0, 210, 255, 0.02) 60px,
+        rgba(0, 210, 255, 0.02) 61px
       );
     }
 
@@ -118,7 +119,7 @@
       font-size: 0.78rem;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--secondary);
       margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
@@ -130,7 +131,7 @@
       display: block;
       width: 30px;
       height: 1px;
-      background: var(--accent);
+      background: var(--secondary);
     }
 
     h1 {
@@ -182,7 +183,7 @@
     .btn-primary:hover {
       background: var(--accent2);
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(255,0,0,0.4);
+      box-shadow: 0 8px 30px rgba(255, 102, 0, 0.35);
     }
 
     .btn-outline {
@@ -192,8 +193,8 @@
     }
 
     .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--secondary);
+      color: var(--secondary);
     }
 
     /* WhatsApp btn */
@@ -224,7 +225,7 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 4.5rem;
       line-height: 1;
-      color: var(--accent);
+      color: var(--secondary);
     }
 
     .stat-label {
@@ -242,7 +243,10 @@
     }
 
     /* ─── SECTION BASE ─── */
-    section { padding: 6rem 4rem; }
+    section { 
+      padding: 6rem 4rem; 
+      scroll-margin-top: 80px;
+    }
 
     .section-label {
       font-family: 'Barlow Condensed', sans-serif;
@@ -290,7 +294,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .about-text strong { color: var(--accent); font-weight: 600; }
+    .about-text strong { color: var(--secondary); font-weight: 600; }
 
     .about-info {
       display: flex;
@@ -351,13 +355,13 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: var(--accent);
+      background: var(--secondary);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s;
     }
 
-    .program-card:hover { background: #150004; }
+    .program-card:hover { background: #0c1824; }
     .program-card:hover::before { transform: scaleX(1); }
 
     .program-icon {
@@ -386,7 +390,7 @@
       right: 1.5rem;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 3rem;
-      color: rgba(255,0,0,0.12);
+      color: rgba(0, 210, 255, 0.08);
       line-height: 1;
     }
 
@@ -429,7 +433,7 @@
       font-size: 0.75rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--secondary);
       margin-bottom: 0.5rem;
     }
 
@@ -472,7 +476,7 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 5rem;
       line-height: 1;
-      color: rgba(255,0,0,0.2);
+      color: rgba(255, 102, 0, 0.15);
       margin-bottom: -1rem;
     }
 
@@ -518,7 +522,7 @@
     }
 
     .stars {
-      color: var(--accent);
+      color: var(--secondary);
       font-size: 0.85rem;
       margin-top: 0.2rem;
     }
@@ -565,8 +569,8 @@
     }
 
     .contact-chip:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--secondary);
+      color: var(--secondary);
     }
 
     .whatsapp-cta {
@@ -812,7 +816,7 @@
       </div>
 
       <div class="program-card">
-        <span class="program-icon">跑</span>
+        <span class="program-icon">🏃‍♂️</span>
         <div class="program-title">Cardio Training</div>
         <p class="program-desc">Improve cardiovascular endurance, stamina, and heart health with structured cardio protocols tailored for you.</p>
         <span class="program-num">05</span>
@@ -959,7 +963,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">Ram Kumar Fitness</div>
-    <div class="footer-copy">© 2025 Ram Kumar · Personal Trainer · Pondicherry</div>
+    <div class="footer-copy">© 2026 Ram Kumar · Personal Trainer · Pondicherry</div>
     <a 
       href="https://wa.me/919791264563?text=Hi%20Ram!" 
       target="_blank" 
@@ -1001,7 +1005,7 @@
         if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
       });
       navLinks.forEach(a => {
-        a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent)' : '';
+        a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--secondary)' : '';
       });
     });
   </script>
