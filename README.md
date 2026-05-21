@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --black: #000000;      /* Pure Black */
+      --blue: #000000;      /* Pure Black */
       --dark: #0a0a0a;       /* Rich Deep Charcoal for contrast */
       --card: #111111;       /* Dark grey for cards */
       --accent: #ff0000;     /* Pure Red */
